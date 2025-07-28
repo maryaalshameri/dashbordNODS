@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.section1{
+  @apply flex flex-col gap-1 items-center m-10 p-6 rounded-md max-w-full mx-auto shadow shadow-accent
+}
+
+@theme {
+    --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-accent: #00c8d7;
+  --color-highlight: #00ffd9;
+  --color-btnbg: #afb1ca ;
+  /* --color-headershadow: rgba(0, 0, 0, 0.1);
+  */
+  --color-btntext:#1f1f1f; 
+  --color-footer:#e0e0e0;
+  /* --color-btn-bg-hover: #f0f0f0;*/
+  --color-overlaybg: rgba(0, 200, 215, 0.7);
+  --color-leftsidebgmobile: linear-gradient(to top, #2cbb9fcc, #5f4ad8cc); 
+    --font-family: 'Cairo', 'Segoe UI', sans-serif;
+     
+}
+
+@layer base{
+    .dark{
+   --color-bg: #121212;
+  --color-text: #f1f1f1;
+  --color-accent: #00ffe6;
+  --color-highlight: #40e0d0;
+  --color-btnbg: #3c4747;
+  /* --color-headershadow: rgba(255, 255, 255, 0.05); */
+   /* --color-btntext: #000000; */
+  --color-footer:#eeeeee;
+  --color-btntext: #000000; 
+  /* --color-btnbg: #3c4747;
+  --color-btntext: #000000;
+  --color-btnbghover: #2e2e2e;*/
+  --color-overlaybg: #050506cc;
+ --color-leftsidebgmobile: #050506cc; 
+
+    }
+
+    
+}

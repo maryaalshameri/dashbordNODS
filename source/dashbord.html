@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>لوحة التحكم - NODS</title>
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="./output.css" rel="stylesheet">
+</head>
+<body class="bg-bg text-text font-family">
+   <!-- Login Page -->
+  <div id="loginPage" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-sm">
+      <h2 class="text-2xl font-bold mb-6 text-center text-accent">تسجيل الدخول</h2>
+      <form id="loginForm" class="space-y-4">
+        <input type="text" placeholder="اسم المستخدم" id="username" class="w-full px-4 py-2 border rounded focus:outline-accent">
+        <input type="password" placeholder="كلمة المرور" id="password" class="w-full px-4 py-2 border rounded focus:outline-accent">
+        <button type="submit" class="w-full bg-accent hover:bg-highlight text-white font-bold py-2 rounded">دخول</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Dashboard Container -->
+  <div  id="dashboard" class="min-h-screen flex">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 bg-btnbg shadow-md md:block hidden fixed md:static top-0 right-0 h-full z-40">
+
+      <div class="p-4 text-center border-b">
+        <img src="image/logo.png" alt="Logo" class="w-50 mx-auto mb-2" />
+        <h2 class="text-lg font-bold text-accent">منظمة NODS</h2>
+      </div>
+      <nav class="mt-6 px-4 space-y-4 text-right">
+        <a href="#" class="flex items-center justify-between px-4 py-2 rounded bg-accent text-bg"><i class="fas fa-home"></i><span>لوحة التحكم</span></a>
+        <a href="#users" class="flex items-center justify-between px-4 py-2 hover:bg-highlight rounded"><i class="fas fa-users"></i><span>المستخدمين</span></a>
+        <a href="#projects" class="flex items-center justify-between px-4 py-2 hover:bg-highlight rounded"><i class="fas fa-folder"></i><span>المشاريع</span></a>
+        <a href="#messages" class="flex items-center justify-between px-4 py-2 hover:bg-highlight rounded"><i class="fas fa-envelope"></i><span>الرسائل</span></a>
+        <a href="#" class="flex items-center justify-between px-4 py-2 hover:bg-highlight rounded"><i class="fas fa-cog"></i><span>الإعدادات</span></a>
+        <a href="#" class="flex items-center justify-between px-4 py-2 hover:bg-highlight text-red-600 rounded" id="logoutBtn"><i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span></a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col">
+
+      <!-- Header -->
+      <header class="bg-white shadow p-4 flex justify-between items-center">
+        <button id="toggleSidebar" class="md:hidden text-accent text-xl">
+  <i class="fas fa-bars"></i>
+</button>
+        <h1 class="text-xl font-semibold text-btntext">مرحبًا بك في لوحة التحكم</h1>
+        <button id="themeToggle" class="text-accent text-xl">
+          <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+      </header>
+
+      <!-- Content Area -->
+      <main class="p-6 space-y-6">
+        <!-- Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+          <div class="bg-btnbg rounded shadow p-4 text-center hover:shadow shadow-highlight hover:bg-bg">
+            <h2 class="text-sm  mb-2">عدد المشاريع</h2>
+            <p class="text-2xl font-bold text-accent">12</p>
+          </div>
+          <div class="bg-btnbg rounded shadow p-4 text-center hover:shadow shadow-highlight hover:bg-bg">
+            <h2 class="text-sm mb-2">عدد المستخدمين</h2>
+            <p class="text-2xl font-bold text-accent">35</p>
+          </div>
+          <div class="bg-btnbg rounded shadow p-4 text-center hover:shadow shadow-highlight hover:bg-bg">
+            <h2 class="text-sm mb-2">رسائل جديدة</h2>
+            <p class="text-2xl font-bold text-accent">5</p>
+          </div>
+        </div>
+
+        <!-- Latest Projects Table -->
+        <div class="bg-btnbg shadow rounded p-4" id="projects">
+          <h3 class="text-lg font-semibold mb-4">أحدث المشاريع</h3>
+          <table class="w-full text-sm text-right">
+            <thead>
+              <tr class="border-b text-accent">
+                <th class="p-2">#</th>
+                <th class="p-2">اسم المشروع</th>
+                <th class="p-2">التاريخ</th>
+                <th class="p-2">الحالة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-highlight">
+                <td class="p-2">1</td>
+                <td class="p-2">تمكين المرأة</td>
+                <td class="p-2">2024-01-10</td>
+                <td class="p-2 text-green-600 font-bold">نشط</td>
+              </tr>
+              <tr class="hover:bg-highlight">
+                <td class="p-2">2</td>
+                <td class="p-2">تعليم الكبار</td>
+                <td class="p-2">2024-01-05</td>
+                <td class="p-2 text-yellow-600 font-bold">معلّق</td>
+              </tr>
+              <tr class="hover:bg-highlight">
+                <td class="p-2">3</td>
+                <td class="p-2">رعاية الأيتام</td>
+                <td class="p-2">2023-12-29</td>
+                <td class="p-2 text-red-600 font-bold">منتهي</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="projects" class="bg-btnbg shadow rounded p-4">
+          <h3 class="text-lg font-semibold mb-4">إدارة المشاريع</h3>
+          <ul class="space-y-2">
+            <li class="border-b py-2">تمكين المرأة - نشط</li>
+            <li class="border-b py-2">مكافحة الأمية - معلّق</li>
+            <li class="border-b py-2">رعاية الأيتام - منتهي</li>
+          </ul>
+           </div>
+         <div id="messages" class="bg-btnbg shadow rounded p-4">
+          <h3 class="text-lg font-semibold mb-4">الرسائل الأخيرة</h3>
+          <ul class="space-y-2">
+            <li class="border-b py-2">رسالة من أحمد - استفسار حول التبرع</li>
+            <li class="border-b py-2">اقتراح من سلمى - مشروع جديد</li>
+            <li class="border-b py-2">شكوى من فاطمة - تأخير في الرد</li>
+          </ul>
+        </div>
+
+        <!-- Users -->
+        <div id="users" class="bg-btnbg shadow rounded p-4">
+          <h3 class="text-lg font-semibold mb-4">إدارة المستخدمين</h3>
+          <ul class="space-y-2">
+            <li class="border-b py-2">أحمد - admin</li>
+            <li class="border-b py-2">سلمى - محرر</li>
+            <li class="border-b py-2">فاطمة - زائر</li>
+          </ul>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Theme Toggle Script -->
+  <script src="js/dash.js">
+   
+  </script>
+
+</body>
+</html>
